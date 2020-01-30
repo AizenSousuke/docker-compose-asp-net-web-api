@@ -1,0 +1,21 @@
+version: '3'
+services: 
+    app:
+        build:
+            context: .
+            args: 
+                - APPNAME="ASP NET CORE WEB API"
+        depends_on: 
+            - sql
+        ports: 
+            - 51044:80
+        environment: 
+            - APP_NAME="ASP NET CORE WEB API"
+    sql:
+        image: mcr.microsoft.com/mssql/server
+        environment: 
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=P@ssw0rd
+        ports: 
+            - 1433:1433
+        restart: always
