@@ -4,14 +4,12 @@ services:
         build:
             context: .
             args: 
-                - APPNAME="ASP NET CORE WEB API"
+                APPNAME: "ASP NET CORE WEB API"
         depends_on: 
             - sql
         ports: 
             - 51044:80
         restart: always
-        environment: 
-            - APP_NAME="ASP NET CORE WEB API"
     sql:
         image: mcr.microsoft.com/mssql/server
         environment: 
