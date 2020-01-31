@@ -16,6 +16,8 @@ services:
         environment: 
             - ACCEPT_EULA=Y
             - SA_PASSWORD=P@ssw0rd
+        volumes: 
+            - ./data:/var/opt/mssql/data
         ports: 
             - 1433:1433
         restart: always

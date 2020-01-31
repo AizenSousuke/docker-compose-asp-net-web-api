@@ -8,7 +8,7 @@ COPY . .
 # RUN dotnet ef database update
 RUN dotnet publish -c Release -o output
 WORKDIR /stage/output
-RUN ls -l
+# RUN ls -l
 
 # Run
 # FROM mcr.microsoft.com/dotnet/core/runtime:3.1 as runtime
