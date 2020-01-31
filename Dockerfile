@@ -17,6 +17,8 @@ ARG APPNAME
 ENV APP_NAME=${APPNAME}.dll
 WORKDIR /code
 COPY --from=stage /stage/output .
+COPY ./wait-for-it.sh .
 RUN ls -l
 EXPOSE 80 5000
 ENTRYPOINT [ "dotnet", "ASP NET CORE WEB API.dll" ]
+# ENTRYPOINT ["./wait-for-it.sh", "sql:1433", "--", "dotnet",  "ASP NET CORE WEB API.dll" ]
